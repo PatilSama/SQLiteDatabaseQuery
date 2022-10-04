@@ -1,1 +1,1 @@
-# SQLiteDatabaseQuery
+# SQLiteDatabase
