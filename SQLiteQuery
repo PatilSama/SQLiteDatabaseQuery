@@ -33,3 +33,4 @@
 	DB.close();
 // Delete database table.
 	DB.execSQL("DROP TABLE IF EXISTS table_name");
+	DB.close();
