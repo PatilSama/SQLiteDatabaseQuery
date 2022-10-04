@@ -1,0 +1,35 @@
+
+******************************** SQLite Database *******************************************************
+
+
+// Create table.
+	
+	SQLiteDatabase DB = openOrCreateDatabase("DATABASE_NAME",MODE_PRIVATE,null);
+	DB.execSQL("create table if not exists "TABLE_NAME"(sr integer(10),name varchar2(50))");
+// if you want to set sr is autoincremet then have used it 
+				= integer primary key autoincrement not null.
+	ContentValues cv = new ContentValues();
+	cv.put("KEY","VALUE");
+		
+// insert data in table.
+	DB.insert("TABLE_NAME/DATABASE_TABLE",null,cv);
+	DB.close();
+// retrive data from table.
+	Curser curser = DB.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+	if (cursor.moveToFirst()) // moving our cursor to first position.
+	{
+		while (cursor.moveToNext()) // moving our cursor to next.
+		{
+			System.out.println("Print Data = "+cursor.getString(1)); // Get String Value.
+			System.out.println("Print Data = "+cursor.getInt(2));    // Get Integer Value
+		}
+	}
+	curser.close();
+
+// Updata database table.
+
+	cv.put(KEY_ROWID, rowId); 
+	DB.update(TABLE_NAME/DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null);
+	DB.close();
+// Delete database table.
+	DB.execSQL("DROP TABLE IF EXISTS table_name");
